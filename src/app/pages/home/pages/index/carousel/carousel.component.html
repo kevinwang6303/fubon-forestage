@@ -1,0 +1,28 @@
+<carousel-container
+[autoplay]="true"
+[autoplay-speed]="5000"
+[between-delay]="3000">
+
+<section
+  carousel-items-container
+  class="carousel-container">
+  <article class="pane height500 cursor-pointer"
+    *ngFor="let avatar of file; let i = index;"
+    carousel-item
+    [style.backgroundImage]="avatar.image | safe:'background-image'">
+  </article>
+</section>
+
+  <ng-template #carouselPrev>
+    <mat-icon class="icon">keyboard_arrow_left</mat-icon>
+  </ng-template>
+
+  <ng-template #carouselNext>
+    <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+  </ng-template>
+
+  <ng-template #carouselDot let-model>
+    <div class="ball" [class.visible]="model.index === model.currentIndex"></div>
+  </ng-template>
+
+</carousel-container>

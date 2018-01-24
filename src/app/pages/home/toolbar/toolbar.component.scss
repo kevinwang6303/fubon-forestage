@@ -1,0 +1,54 @@
+@import '~common/css/_my-theme.variable.scss';
+@import '~common/css/animation/_underline.scss';
+@import '~@angular/material/theming';
+:host {
+  z-index: 2;
+}
+
+$app-menu-height:60px;
+.menu-container {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  height: $app-menu-height;
+  @include mat-elevation(1);
+  .logo {
+    height: $app-menu-height - 15px;
+  }
+  &.small {
+    height: $app-menu-height - 20px;
+    .logo {
+      height: ($app-menu-height - 5px) / 2;
+    }
+    .choice-menu {
+      a {
+        color: black;
+        @include underline-animation( #848484, white);
+      }
+    }
+  }
+  .choice-menu {
+    display: block;
+    a {
+      position: relative;
+      color: #848484;
+      @include underline-animation(mat-color($app-primary), black);
+    }
+  }
+}
+
+.touch-area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  z-index: $popup-zIndex + 1
+}
+
+.hide-block {
+  height: $app-menu-height;
+  &.small {
+    height: $app-menu-height / 2;
+  }
+}

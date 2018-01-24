@@ -1,0 +1,62 @@
+<app-carousel>
+</app-carousel>
+<div class="index" fxLayout="column" fxLayoutGap="20px">
+  <h2>
+    分類選項
+  </h2>
+  <div class="cate-block" fxLayoutAlign="space-around">
+    <div class="first-cate" fxFlex="1 1 45%" fxLayoutAlign="center center">
+      <img class="img-item" src="assets/images/gallery-p2-2.jpg" alt="">
+    </div>
+    <div class="other-cate" fxFlex="1 1 45%" fxLayoutWrap fxLayoutGap="15px">
+      <span class="cate-item background-accent" *ngFor="let item of cate" fxLayoutAlign="center center" fxLayout="column">
+        <img class="cate-item-img" [src]="item.images" alt="">
+        <span class="cate-content">{{ item.content }}</span>
+      </span>
+    </div>
+  </div>
+  <h2>
+    系列專題
+  </h2>
+  <div fxLayoutWrap fxLayoutGap="15px">
+    <mat-card class="card" *ngFor="let item of series">
+      <img mat-card-image [src]="item.images" />
+      <mat-card-content class="content">
+        <h3 class="title">{{ item.title }}</h3>
+        <p class="color-accent">{{ item.content }}</p>
+      </mat-card-content>
+      <mat-card-footer class="footer" fxLayoutAlign="center">
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <h2>
+    本月新片
+  </h2>
+  <div class="carousel-block" fxLayoutAlign="end">
+
+    <div class="item-list">
+
+      <carousel-container [show-num]="5" [autoplay]="true" [autoplay-speed]="5000" [between-delay]="3000">
+
+        <section carousel-items-container class="carousel-container item-list">
+          <article class="pane height90p cursor-pointer" *ngFor="let avatar of file; let i = index;" carousel-item [style.backgroundImage]="avatar.image | safe:'background-image'">
+          </article>
+        </section>
+
+        <ng-template #carouselPrev>
+          <mat-icon class="icon">keyboard_arrow_left</mat-icon>
+        </ng-template>
+
+        <ng-template #carouselNext>
+          <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+        </ng-template>
+
+        <ng-template #carouselDot let-model>
+          <div class="ball" [class.visible]="model.index === model.currentIndex"></div>
+        </ng-template>
+
+      </carousel-container>
+
+    </div>
+  </div>
+</div>

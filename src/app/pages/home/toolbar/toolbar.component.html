@@ -1,0 +1,30 @@
+<mat-toolbar fxLayoutGap="10px" fxLayoutAlign="start center" class="menu-container transition-long">
+
+  <div fxFlex="1 1 auto">
+    <!-- fxHide.gt-sm> -->
+    <button mat-icon-button (click)="menu.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div #openOverlay class="touch-area"></div>
+  </div>
+
+  <div fxLayout fxFlex="1 1">
+    <img [routerLink]="['/']" class="logo cursor-pointer transition-long" src="assets/images/Fubon_Group.png" draggable="false">
+  </div>
+
+  <div class="fill-remaining-space"></div>
+  <!-- menus -->
+  <div class="choice-menu" fxLayoutGap="1.5em">
+    <a class="cursor-pointer" fxFlex mat-ripple>
+      <mat-icon (click)="changeTheme()">view_module</mat-icon>
+    </a>
+    <a class="cursor-pointer" fxFlex mat-ripple>
+      <mat-icon>account_circle</mat-icon>
+    </a>
+
+  </div>
+</mat-toolbar>
+
+<div class="hide-block">
+
+</div>

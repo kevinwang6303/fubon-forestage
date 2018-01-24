@@ -1,0 +1,53 @@
+@import '~common/css/_my-theme.variable.scss';
+@import '~common/css/general/_img.scss';
+@mixin carousel-overlay() {
+  .progress {
+    width: 0%;
+    height: 5px;
+    background: mat-color($app-accent);
+    position: absolute;
+    bottom: 0;
+  }
+  .icon {
+    color: mat-color($app-accent);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+  .carousel-container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 0;
+    .pane {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+      background-attachment: scroll;
+      background-size: 100% 100%;
+      background-position: center;
+      &.height500 {
+        height: 500px;
+      }
+      &.height90p {
+        height: 90%;
+      }
+    }
+    &.transition {
+      transition: all .4s ease-in-out;
+    }
+  }
+  .ball {
+    width: 10px;
+    height: 10px;
+    border-radius: app-border-radius(cycle);
+    background: mat-color($app-primary);
+    border: 2px solid white;
+    opacity: 0.5;
+    &.visible {
+      opacity: 1;
+      background: mat-color($app-accent);
+      border: 2px solid mat-color($app-primary);
+    }
+  }
+}
