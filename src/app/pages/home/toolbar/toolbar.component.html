@@ -2,7 +2,7 @@
 
   <div fxFlex="1 1 auto">
     <!-- fxHide.gt-sm> -->
-    <button mat-icon-button (click)="menu.toggle()">
+    <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
     <div #openOverlay class="touch-area"></div>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="fill-remaining-space"></div>
-  <!-- menus -->
+
   <div class="choice-menu" fxLayoutGap="1.5em">
     <a class="cursor-pointer" fxFlex mat-ripple>
       <mat-icon (click)="changeTheme()">view_module</mat-icon>
